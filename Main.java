@@ -44,16 +44,7 @@ public class Main {
 		File[] takes = input.listFiles();
 
 		for (File takesI : takes) {
-			/*
-			 * if(takesI.isDirectory()){ File nestedFolder = new
-			 * File(export+"\\"+takesI.getName()+"\\");
-			 * 
-			 * try { nestedFolder.createNewFile(); } catch (IOException e) { // TODO
-			 * Auto-generated catch block e.printStackTrace(); } Skeletonize(takesI,
-			 * nestedFolder);
-			 * 
-			 * }
-			 */
+
 			if (takesI.length() > 0) {
 				try {
 
@@ -87,47 +78,3 @@ public class Main {
 	}
 
 }
-
-/*
- * 
- * String path = "C:\\Users\\lever\\Documents\\delete with replace"; File dir =
- * new File(path); File export = null; skeletonize = true; String[] dirPaths =
- * dir.list();
- * 
- * 
- * 
- * for (String dirIterd : dirPaths) { if (dir.isDirectory()) { File fileIter =
- * new File(dirIterd); // List<String> dirPathList = new
- * ArrayList<String>().addAll(dirPaths); // dirPathIterable =
- * 
- * if (fileIter.length()<1) {
- * 
- * Path copyFrom = fileIter.toPath(); System.out.println("Copying file: " +
- * copyFrom); try { File exportFolder= new
- * File("T:\\backup from mass delrep\\"+timeC+"\\"); export = new
- * File(exportFolder+"\\"+fileIter.getCanonicalFile().getName());
- * if(!exportFolder.exists()) { exportFolder.mkdir(); }
- * 
- * Files.copy(copyFrom, export.toPath());
- * 
- * if (skeletonize) {
- * 
- * String name = fileIter.getName(); // fileIter.delete(); //
- * fileIter.createNewFile(); fileIter.createNewFile();
- * 
- * } } catch (FileAlreadyExistsException e) { // TODO Auto-generated catch block
- * //e.printStackTrace();
- * System.out.println("File already exists: "+export.toPath()); } catch
- * (FileNotFoundException e) { // TODO Auto-generated catch block
- * e.printStackTrace(); } catch (IOException e) { // TODO Auto-generated catch
- * block e.printStackTrace(); } } else {
- * System.out.println("File is size 0, skipping. . .\n"+fileIter.getName()); }
- * 
- * } else if (dir.isFile()) { Path copyFrom = dir.getAbsoluteFile().toPath();
- * System.out.println("Copying single file: " + dir.getName()); try {
- * Files.copy(copyFrom, export.toPath()); } catch (IOException e) { // TODO
- * Auto-generated catch block e.printStackTrace(); } } else {
- * System.out.println(
- * "Sorry, the supplied path doesnt lead to a file or directory, or the permission to read it has not been granted. . ."
- * ); } }
- */
