@@ -1,11 +1,3 @@
-package app;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
 
 public class Main {
 
@@ -37,6 +29,8 @@ public class Main {
 		if (exportDir.listFiles().length==0) {
 			exportDir.delete();
 			System.out.println("No new files. . .\n Deleted the created empty directory. . .");
+		} else {
+			System.out.println("Skeletonized finished. . .");
 		}
 	}
 
@@ -56,7 +50,6 @@ public class Main {
 					System.out.println("Copied file: " + takesI.getName());
 
 					if (skeletonize) {
-						String name = takesI.getName();
 						String fullPath = takesI.getCanonicalPath();
 						takesI.delete();
 
@@ -67,7 +60,6 @@ public class Main {
 					}
 
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else {
